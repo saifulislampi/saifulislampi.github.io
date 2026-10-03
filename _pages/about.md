@@ -1,34 +1,35 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Md Saiful Islam · Ph.D. Student, Computer Science and Engineering, University of Notre Dame
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  image_circular: false
+  # more_info: <p>South Bend, IN</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false
+social: true
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
 
 latest_posts:
   enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  scrollable: false
+  limit: 3
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm a Ph.D. student in Computer Science and Engineering at the University of Notre Dame, advised by Douglas Thain in the Cooperative Computing Lab.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I build systems that make scientific workflows portable across HPC sites. A workflow that runs on one cluster often breaks on the next, because the software, data, and site rules all differ. My work handles each piece:
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Packaging: Floability bundles a workflow with its software, data, and compute needs into a portable "backpack."
+Data: a declarative data layer fetches and caches datasets, so the same workflow runs unchanged anywhere.
+Site knowledge: evidence-backed site profiles capture the rules each HPC site enforces, with LLM agents reading the docs.
+
+Before my Ph.D., I spent six years as a software engineer, most recently as a Senior Software Engineer leading a development team.
+
+Away from the cluster, I'm usually chasing a good cup of coffee. My ideal weekend starts with beans I picked up on a trip, hand-ground and brewed slowly over a V60. I listen to a lot of folk and country music, and I fall asleep to audiobooks most nights.
