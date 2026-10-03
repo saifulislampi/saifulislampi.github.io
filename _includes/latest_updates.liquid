@@ -1,0 +1,35 @@
+{% assign updates = site.posts | concat: site.news | sort: 'date' | reverse %}
+<div class="news">
+  {% if updates.size > 0 %}
+    <div
+      class="table-responsive"
+      {% if page.latest_updates.scrollable and updates.size > 3 %}
+        style="max-height: 60vw"
+      {% endif %}
+    >
+      <table class="table table-sm table-borderless">
+        {% assign updates_limit = page.latest_updates.limit | default: updates.size %}
+        {% for item in updates limit: updates_limit %}
+          <tr>
+            <th scope="row" style="width: 20%">
+              <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%b %d, %Y' }}</time>
+            </th>
+            <td>
+              {% if item.inline %}
+                {{ item.content | remove: '<p>' | remove: '</p>' }}
+              {% elsif item.redirect contains '://' %}
+                <a class="news-title" href="{{ item.redirect }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              {% elsif item.redirect != blank %}
+                <a class="news-title" href="{{ item.redirect | relative_url }}">{{ item.title }}</a>
+              {% else %}
+                <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No news or posts yet.</p>
+  {% endif %}
+</div>
